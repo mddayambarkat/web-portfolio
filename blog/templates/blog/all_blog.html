@@ -1,0 +1,22 @@
+
+{% extends 'portfolio/base.html' %}
+
+
+{% block content %}
+    <h1>Md Dayam has written {{blog.count}} Blog{{blog.count|pluralize}}</h1>
+
+    {% for blogs in blog %}
+
+         <a href="{% url 'blog:blog_detail' blogs.id %}"><h3>{{blogs.title}}</h3>
+         </a>
+        
+  
+       
+  
+    
+   
+  
+   <p>{{blogs.discription}}</p> 
+    {% endfor %}
+{% endblock %}
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'portfolio/base.html' %}
+{% load static  %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+
+</head>
+<body>
+  
+{% block content %}
+
+
+
+<h1>Dayam's portfolio</h1>
+
+
+<br>
+<img src="{% static 'portfolio/imgs.jpg' %}" height="400" width="400" >
+<br>
+
+
+<ol>
+
+    {% for projects in project %}
+    <li><h2> {{projects.title}}</h2></li>
+    
+
+   <p>{{projects.discription}}</p>
+   <img src=" {{projects.image.url}}" alt="">
+
+   <br>
+   {% if projects.url %}
+   <a href="{{projects.url}}">Link</a>
+  {% endif %}
+
+   {% endfor %}
+
+   {% endblock %}
+</ol>
+</body>
+</html>
+
+
+
+
+</body>
+</html>
+
